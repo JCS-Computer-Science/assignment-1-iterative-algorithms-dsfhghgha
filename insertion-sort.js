@@ -1,11 +1,15 @@
-function insertionSort(array) {
-	/*
-	 ** For each element in the array, swap it with the element
-	 ** before it over and over as long as the element before it
-	 ** is bigger
-	 */
 
-	return array;
+function insertionSort(array) {
+    for(let i = 1; i< array.length; i++){
+        let number = array[i];
+        let next = i - 1;
+        while(next >= 0 && array[next] > number){
+            array[next+1] = array[next]
+            next--;
+        }
+        array[next+1] = number;
+    }
+    return array;
 }
 
 module.exports = insertionSort;
